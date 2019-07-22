@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2884936759235214439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2884936759235214441}
+  - component: {fileID: 6017069086886689002}
+  m_Layer: 0
+  m_Name: DungeonGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2884936759235214441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884936759235214439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6017069086886689002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2884936759235214439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78656a64a29c8974dba4a44f7963e4c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startRoomPrefab: {fileID: 863755110640029126, guid: a170af9106a192d4a9f896d27c735b99,
+    type: 3}
+  upRooms:
+  - {fileID: 7311936998321477349, guid: 926916894e3e59a4d99873a611c72170, type: 3}
+  - {fileID: 7710166310588165956, guid: b437c38a77522f54b99ad66b2ab65746, type: 3}
+  - {fileID: 5022747096751497666, guid: 1fa3cb99938c0e84e900023e7832c9c2, type: 3}
+  - {fileID: 751700667517747642, guid: 68771cb31e57711429cf4ff43ad1e303, type: 3}
+  - {fileID: 2305979187456887061, guid: 26db26d169db6984f959778eacc896bf, type: 3}
+  downRooms:
+  - {fileID: 7894674658106724071, guid: 8b323b26fec44cc438fa49ecb92da184, type: 3}
+  - {fileID: 7311936998321477349, guid: 926916894e3e59a4d99873a611c72170, type: 3}
+  - {fileID: 1572191185145124927, guid: 523f72acd07440f4e8982f2c032dbc5e, type: 3}
+  - {fileID: 2478870764144443280, guid: 986157179dc6f254aa779665bb288271, type: 3}
+  - {fileID: 2305979187456887061, guid: 26db26d169db6984f959778eacc896bf, type: 3}
+  rightRooms:
+  - {fileID: 3206736035707579497, guid: 68e313d413fc98f45b0ee571e84d18b2, type: 3}
+  - {fileID: 7235121569417022535, guid: 6268f6627a1789e4f850027bca0271d3, type: 3}
+  - {fileID: 1572191185145124927, guid: 523f72acd07440f4e8982f2c032dbc5e, type: 3}
+  - {fileID: 5022747096751497666, guid: 1fa3cb99938c0e84e900023e7832c9c2, type: 3}
+  - {fileID: 2305979187456887061, guid: 26db26d169db6984f959778eacc896bf, type: 3}
+  leftRooms:
+  - {fileID: 3939392581844693961, guid: 86ec58f28a10fca4cbf32a085cfee44f, type: 3}
+  - {fileID: 7235121569417022535, guid: 6268f6627a1789e4f850027bca0271d3, type: 3}
+  - {fileID: 751700667517747642, guid: 68771cb31e57711429cf4ff43ad1e303, type: 3}
+  - {fileID: 2478870764144443280, guid: 986157179dc6f254aa779665bb288271, type: 3}
+  - {fileID: 2305979187456887061, guid: 26db26d169db6984f959778eacc896bf, type: 3}
+  closedRoom: {fileID: 6131861358413696145, guid: dea61c0632517f6479752235567d2888,
+    type: 3}
+  interiors:
+  - {fileID: 7519860555805725192, guid: b9b98dd649b07fe45883d7584efee5a0, type: 3}
+  - {fileID: 4603700275084588908, guid: 17535b2b7598fd042a46a6d3d86b77a3, type: 3}
+  - {fileID: 4858020991510739937, guid: cbac0c764a8bada449c1e35db3ffba5c, type: 3}
+  - {fileID: 1541044043444118815, guid: e91f13cde2f17ed4baa5f27fa78ba193, type: 3}
+  - {fileID: 7613058569990203672, guid: e45ef41f03ffa144395cbc5bbd64526d, type: 3}
+  - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
+  - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
+  - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
+  - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
+  rooms: []
+  maxRooms: 5
+  boss: {fileID: 5237860445819046874, guid: a80079d75656028488603e0dac3337c2, type: 3}
+  waitTime: 30

@@ -1,0 +1,68 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace MapGen
+{
+    public class DungeonGenerator : MonoBehaviour
+    {
+        #region singleton
+        public static DungeonGenerator instance;
+
+        void Awake()
+        {
+            if (instance != null)
+                Debug.LogWarning("more than one DungeonGenerator instance");
+
+            instance = this;
+
+
+        }
+
+        #endregion
+        
+        //variables
+        public GameObject startRoomPrefab;
+        public GameObject[] upRooms;
+        public GameObject[] downRooms;
+        public GameObject[] rightRooms;
+        public GameObject[] leftRooms;
+        public GameObject closedRoom;
+        public GameObject[] interiors;
+        public List<GameObject> rooms;
+        public int maxRooms = 5;
+        public GameObject boss;
+        public float waitTime;
+        private bool spawnedBoss;
+
+        //events
+
+
+
+        /// <summary>
+        /// Start is called on the frame when a script is enabled just before
+        /// any of the Update methods is called the first time.
+        /// </summary>
+        void Start()
+        {
+            Instantiate(startRoomPrefab, transform.position, Quaternion.identity);
+        }
+
+        void Update(){
+
+            if(waitTime <= 0 && spawnedBoss == false){
+                for (int i = 0; i < rooms.Count; i++) {
+                    if(i == rooms.Count-1){
+                        Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                        spawnedBoss = true;
+                        EventManager.OnBossPortalSpawned();
+                        NavigationBaker.GenerateNavMesh();
+                    }
+                }
+            } else {
+                waitTime -= Time.deltaTime;
+            }
+        }
+    }
+
+}
