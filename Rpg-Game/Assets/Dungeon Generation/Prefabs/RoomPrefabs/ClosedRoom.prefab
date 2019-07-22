@@ -1,6 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!65 &3210111586488002927
+--- !u!114 &593637923651205983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344777623362812377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4e3702b2f1c0f4eaa6eb673a4f4973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &5129319237767427005
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -11,7 +23,33 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.0000007, z: 2.220446e-16}
+  m_Size: {x: 2, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.49999964, z: 0}
+--- !u!65 &9128757302114878126
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344777623362812377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0.49999964, z: 0}
+--- !u!65 &6500009694127128143
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053943726839411953}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0.49999964, z: 0}
 --- !u!65 &8198863559577239870
 BoxCollider:
@@ -24,9 +62,33 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.0000007, z: 2.220446e-16}
+  m_Size: {x: 2, y: 1, z: 0}
   m_Center: {x: 0, y: 0.49999964, z: 0}
---- !u!65 &5465465125296776486
+--- !u!114 &8847914149900640384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3053943726839411953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4e3702b2f1c0f4eaa6eb673a4f4973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1829767953299454222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032020038992248673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4e3702b2f1c0f4eaa6eb673a4f4973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &7318298891631864659
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,7 +99,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.0000007, z: 2.220446e-16}
+  m_Size: {x: 2, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.49999964, z: 0}
+--- !u!65 &8016436714488126863
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032020038992248673}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0.49999964, z: 0}
 --- !u!1 &6131861358413696145
 GameObject:
@@ -70,7 +145,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1218282570246444441
+--- !u!114 &8842782942529649512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218453326637577321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4e3702b2f1c0f4eaa6eb673a4f4973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &3900784085619029494
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -81,7 +168,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 1.0000007, z: 2.220446e-16}
+  m_Size: {x: 2, y: 1, z: 0}
+  m_Center: {x: 0, y: 0.49999964, z: 0}
+--- !u!65 &1877425085271408315
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218453326637577321}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 2, z: 0.5}
   m_Center: {x: 0, y: 0.49999964, z: 0}
 --- !u!1001 &59693876487894016
 PrefabInstance:
@@ -150,21 +250,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1462719245901863819, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8254912057737342501, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 167032688887881362, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1598771666375789623, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
         type: 3}
       propertyPath: m_IsTrigger
@@ -175,12 +260,27 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 167032688887881362, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9087291033832184546, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2621400514696072673, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1462719245901863819, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8254912057737342501, guid: fb7cb6bc48347a84c8edb1e0cc9acf18,
         type: 3}
       propertyPath: m_IsActive
       value: 0
