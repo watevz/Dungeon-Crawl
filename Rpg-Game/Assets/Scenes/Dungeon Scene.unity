@@ -248,6 +248,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6017069086886689002, guid: 189ad7aa7425c714497aa3fcdf157176,
+        type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 173122342721777067, guid: 4041c162807a2f64498988fcd914dd64,
+        type: 3}
+    - target: {fileID: 6017069086886689002, guid: 189ad7aa7425c714497aa3fcdf157176,
+        type: 3}
+      propertyPath: bossRoom
+      value: 
+      objectReference: {fileID: 5237860445819046874, guid: a80079d75656028488603e0dac3337c2,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 189ad7aa7425c714497aa3fcdf157176, type: 3}
 --- !u!1 &2056308907
@@ -261,6 +273,7 @@ GameObject:
   - component: {fileID: 2056308910}
   - component: {fileID: 2056308909}
   - component: {fileID: 2056308908}
+  - component: {fileID: 2056308911}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -332,3 +345,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2056308911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056308907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ccf0add1c32a94e9d648e3367371ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smoothing: 5
+  offset: {x: 0, y: 10, z: -5}

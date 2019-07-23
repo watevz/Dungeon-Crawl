@@ -29,10 +29,15 @@ namespace MapGen
         public GameObject[] leftRooms;
         public GameObject closedRoom;
         public GameObject[] interiors;
-        public List<GameObject> rooms;
         public int maxRooms = 5;
-        public GameObject boss;
+        public GameObject bossRoom;    
         public float waitTime;
+        public GameObject playerPrefab;
+
+        [HideInInspector]
+        public List<GameObject> rooms;
+
+
         private bool spawnedBoss;
 
         //events
@@ -53,7 +58,7 @@ namespace MapGen
             if(waitTime <= 0 && spawnedBoss == false){
                 for (int i = 0; i < rooms.Count; i++) {
                     if(i == rooms.Count-1){
-                        Instantiate(boss, rooms[i].transform.position, Quaternion.identity);
+                        Instantiate(bossRoom, rooms[i].transform.position, Quaternion.identity);
                         spawnedBoss = true;
                         EventManager.OnBossPortalSpawned();
                         NavigationBaker.GenerateNavMesh();
