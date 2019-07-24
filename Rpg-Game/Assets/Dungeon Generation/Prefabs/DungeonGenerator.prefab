@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startRoomPrefab: {fileID: 863755110640029126, guid: a170af9106a192d4a9f896d27c735b99,
     type: 3}
+  bossRooms: []
   upRooms:
   - {fileID: 7311936998321477349, guid: 926916894e3e59a4d99873a611c72170, type: 3}
   - {fileID: 7710166310588165956, guid: b437c38a77522f54b99ad66b2ab65746, type: 3}
@@ -81,7 +82,9 @@ MonoBehaviour:
   - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
   - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
   - {fileID: 289671038510864497, guid: dee1ccae214fe104281e4887c111a661, type: 3}
-  rooms: []
   maxRooms: 15
-  boss: {fileID: 5237860445819046874, guid: a80079d75656028488603e0dac3337c2, type: 3}
+  bossPortalPrefab: {fileID: 5237860445819046874, guid: a80079d75656028488603e0dac3337c2,
+    type: 3}
   waitTime: 5
+  playerPrefab: {fileID: 0}
+  rooms: []

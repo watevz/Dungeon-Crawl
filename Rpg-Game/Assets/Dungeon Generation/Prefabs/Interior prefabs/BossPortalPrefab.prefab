@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1861017661776703053}
   - component: {fileID: 952478657906729349}
   m_Layer: 0
-  m_Name: BossRoom
+  m_Name: BossPortalPrefab
   m_TagString: BossRoom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
