@@ -17,6 +17,7 @@ namespace Interaction
 
         public virtual void Interact()
         {
+            Debug.Log("interacted");
 
         }
 
