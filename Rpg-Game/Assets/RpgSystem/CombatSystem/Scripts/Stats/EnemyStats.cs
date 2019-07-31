@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats {
 
-    public override void Die()
-    {
-        base.Die();
-        // play death animations
-        Destroy(gameObject);
-        //drop loot
-    }
+    // public override void Die()
+    // {
+    //     base.Die();
+    //     // play death animations
+    //     Destroy(gameObject);
+    //     //drop loot
+    // }
 }

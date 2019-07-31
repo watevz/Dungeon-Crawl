@@ -359,9 +359,10 @@ GameObject:
   - component: {fileID: 1678442002}
   - component: {fileID: 1678442001}
   - component: {fileID: 1678442006}
+  - component: {fileID: 1678442007}
   m_Layer: 0
   m_Name: target
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -465,10 +466,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  currentHealth: 0
   damage:
     baseValue: 0
   armour:
     baseValue: 0
+  attackRange:
+    baseValue: 0
+--- !u!114 &1678442007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678442000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eac56ebbb0741224c9c68a22c087a153, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackCooldown: 0
+  attackDelay: 0
 --- !u!1 &1907808935
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,6 +782,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0047431625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188092324466715445, guid: 4041c162807a2f64498988fcd914dd64,
+        type: 3}
+      propertyPath: attackCooldown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1188092324466715445, guid: 4041c162807a2f64498988fcd914dd64,
+        type: 3}
+      propertyPath: attackDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705921040792138018, guid: 4041c162807a2f64498988fcd914dd64,
+        type: 3}
+      propertyPath: attackRange.baseValue
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4041c162807a2f64498988fcd914dd64, type: 3}

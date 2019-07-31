@@ -9,8 +9,9 @@ public class PlayerController : MonoBehaviour {
 
     public LayerMask groundLayer;
     private PlayerMovement motor;
-    private PlayerManager playerManager;
     private int floorMask;
+    private PlayerManager playerManager;
+    private CharacterCombat combatControler;
     private CharacterAnimator animator;
 
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour {
         playerManager = PlayerManager.instance;
         motor = GetComponent<PlayerMovement>();
         animator = GetComponent<CharacterAnimator>();
+        combatControler = GetComponent<CharacterCombat>();
     }
 
     private void Update()
@@ -49,12 +51,17 @@ public class PlayerController : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != null)
+            GameObject objectClicked = hit.transform.gameObject;
+            Interactable interactable = objectClicked.GetComponent<Interactable>();
+            if(objectClicked.CompareTag("Enemy")){
+                combatControler.AttemptAttack(objectClicked);
+            }
+            else if (interactable != null)
             {
                 playerManager.SetFocus(interactable);
                 motor.FollowTarget(playerManager.playerState.focus);
             }
+            
         }
     }
 

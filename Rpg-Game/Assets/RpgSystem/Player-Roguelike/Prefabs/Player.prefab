@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 1
+  attackCooldown: 0
   attackDelay: 0
 --- !u!114 &2705921040792138018
 MonoBehaviour:
@@ -197,10 +198,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  currentHealth: 0
   damage:
     baseValue: 1
   armour:
     baseValue: 0
+  attackRange:
+    baseValue: 2
 --- !u!1001 &9194118798864059543
 PrefabInstance:
   m_ObjectHideFlags: 0
