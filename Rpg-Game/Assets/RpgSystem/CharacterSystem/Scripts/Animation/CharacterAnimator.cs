@@ -6,6 +6,7 @@ using Interaction;
 
 namespace RPGAnimations
 {
+    [RequireComponent(typeof(Animator))]
         public class CharacterAnimator : MonoBehaviour {
         public Animator anim;
         public float defaultSpeed = 4;

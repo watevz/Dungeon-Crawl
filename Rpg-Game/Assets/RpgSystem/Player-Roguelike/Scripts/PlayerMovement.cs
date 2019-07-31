@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using Interaction;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMovement : MonoBehaviour
@@ -34,12 +35,12 @@ public class PlayerMovement : MonoBehaviour
         agent.SetDestination(targetPosition);
     }
 
-    // public void FollowTarget(Interactable targetToFollow)
-    // {
-    //     target = targetToFollow.interactionZone;
-    //     agent.stoppingDistance = targetToFollow.interactionRadius * .8f;
-    //     agent.updateRotation = false;
-    // }
+    public void FollowTarget(Interactable targetToFollow)
+    {
+        target = targetToFollow.interactionZone;
+        agent.stoppingDistance = targetToFollow.interactionRadius * .8f;
+        agent.updateRotation = false;
+    }
 
     public void StopFollowingTarget()
     {
