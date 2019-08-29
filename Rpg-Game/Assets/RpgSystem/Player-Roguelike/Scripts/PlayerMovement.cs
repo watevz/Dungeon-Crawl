@@ -5,6 +5,7 @@ using Interaction;
 [RequireComponent(typeof(NavMeshAgent))]
 public class PlayerMovement : MonoBehaviour
 {
+    private PlayerManager playerManager;
     private NavMeshAgent agent;
     public float moveSpeed = 6f;
     public float angSpeed = 720;
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        playerManager = PlayerManager.instance;
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
         agent.angularSpeed = angSpeed;
@@ -23,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(agent.velocity.magnitude <= 0){
+            playerManager.SetMoving(false);
+        }
         if (target != null)
         {
             agent.SetDestination(target.position);
@@ -32,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector3 targetPosition)
     {
+        playerManager.SetMoving(true);
         agent.SetDestination(targetPosition);
     }
 

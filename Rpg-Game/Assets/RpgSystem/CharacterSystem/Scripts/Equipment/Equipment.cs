@@ -20,7 +20,7 @@ namespace InventorySystem
                 {
                     base.Use();
                     EquipmentManager.instance.Equip(this);
-                    RemoveFromInventory();
+                    //RemoveFromInventory();
                 }
 
 

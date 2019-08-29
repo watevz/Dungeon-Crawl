@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
     private PlayerMovement motor;
     private int floorMask;
     private PlayerManager playerManager;
-    private CharacterCombat combatControler;
+    private CharacterCombat combatController;
     private CharacterAnimator animator;
 
 
@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
         playerManager = PlayerManager.instance;
         motor = GetComponent<PlayerMovement>();
         animator = GetComponent<CharacterAnimator>();
-        combatControler = GetComponent<CharacterCombat>();
+        combatController = GetComponent<CharacterCombat>();
     }
 
     private void Update()
@@ -30,7 +30,11 @@ public class PlayerController : MonoBehaviour {
             return;
         }
         MouseActivity();
-        animator.StateCheck(playerManager.playerState.focus);
+        animator.StateCheck(playerManager.playerState);
+    }
+
+    private void AttemptInteract(Interactable interactable){
+        interactable.Interact(this.transform);
     }
 
     private void MouseActivity()
@@ -54,12 +58,13 @@ public class PlayerController : MonoBehaviour {
             GameObject objectClicked = hit.transform.gameObject;
             Interactable interactable = objectClicked.GetComponent<Interactable>();
             if(objectClicked.CompareTag("Enemy")){
-                combatControler.AttemptAttack(objectClicked);
+                combatController.AttemptAttack(objectClicked);
             }
             else if (interactable != null)
             {
-                playerManager.SetFocus(interactable);
-                motor.FollowTarget(playerManager.playerState.focus);
+                AttemptInteract(interactable);
+                // playerManager.SetFocus(interactable);
+                // motor.FollowTarget(playerManager.playerState.focus);
             }
             
         }
@@ -72,7 +77,7 @@ public class PlayerController : MonoBehaviour {
         if (Physics.Raycast(ray, out hit, groundLayer))
         {
             // move to position
-            playerManager.RemoveFocus();
+            playerManager.SetFocus(null);
             motor.StopFollowingTarget();
             motor.Move(hit.point);
         }

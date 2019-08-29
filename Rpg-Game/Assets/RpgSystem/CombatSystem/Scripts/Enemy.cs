@@ -5,7 +5,7 @@ using Interaction;
 
 public class Enemy : Interactable
 {
-    public override void Interact(){
-        base.Interact();
+    protected override void CompleteInteract(Transform interactingObject){
+        base.CompleteInteract(interactingObject);
     }
 }

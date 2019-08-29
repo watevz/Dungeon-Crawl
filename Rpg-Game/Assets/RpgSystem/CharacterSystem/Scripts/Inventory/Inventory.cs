@@ -8,18 +8,18 @@ namespace InventorySystem
 {
     public class Inventory : MonoBehaviour
     {
-        #region singleton
-        public static Inventory instance;
+        // #region singleton
+        // public static Inventory instance;
 
-        void Awake()
-        {
-            if (instance != null)
-                Debug.LogWarning("more than one inventory instance");
+        // void Awake()
+        // {
+        //     if (instance != null)
+        //         Debug.LogWarning("more than one inventory instance");
 
-            instance = this;
-        }
+        //     instance = this;
+        // }
 
-        #endregion
+        // #endregion
 
         public delegate void OnItemChanged();
         public OnItemChanged OnItemChangedCallBack;
@@ -27,11 +27,6 @@ namespace InventorySystem
 
         public List<Item> items = new List<Item>();
         public int InventoryCap = 20;
-
-        //internal void RemoveItem(Item item)
-        //{
-        //    throw new NotImplementedException();
-        //}
 
         public bool AddItem(Item item)
         {

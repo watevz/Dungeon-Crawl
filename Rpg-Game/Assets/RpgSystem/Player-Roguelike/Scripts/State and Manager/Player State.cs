@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Interaction;
-
+[System.Serializable]
 public class PlayerState
 {
     public int healthPoints;

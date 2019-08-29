@@ -6,15 +6,15 @@ namespace InventorySystem
     {
         public GameObject inventoryUi;
         Inventory inventory;
-        public Transform inventorySlotsParent;
-        InventorySlot[] inventorySlots;
+        public Transform InventoryUISlotsParent;
+        InventoryUISlot[] InventoryUISlots;
         // Use this for initialization
         void Start()
         {
-            inventory = Inventory.instance;
+            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             inventory.OnItemChangedCallBack += UpdateUI;
 
-            inventorySlots = inventorySlotsParent.GetComponentsInChildren<InventorySlot>();
+            InventoryUISlots = InventoryUISlotsParent.GetComponentsInChildren<InventoryUISlot>();
         }
 
         // Update is called once per frame
@@ -29,15 +29,15 @@ namespace InventorySystem
         void UpdateUI()
         {
             Debug.Log("updateing ui");
-            for (int i = 0; i < inventorySlots.Length; i++)
+            for (int i = 0; i < InventoryUISlots.Length; i++)
             {
                 if (i < inventory.items.Count)
                 {
-                    inventorySlots[i].AddItem(inventory.items[i]);
+                    InventoryUISlots[i].AddItem(inventory.items[i]);
                 }
                 else
                 {
-                    inventorySlots[i].RemoveItem();
+                    InventoryUISlots[i].RemoveItem();
                 }
             }
         }

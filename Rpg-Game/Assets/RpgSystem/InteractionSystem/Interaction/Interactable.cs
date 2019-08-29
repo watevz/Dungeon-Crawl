@@ -7,50 +7,43 @@ namespace Interaction
     public class Interactable : MonoBehaviour
     {
 
-        bool isFocus;
         Transform player;
 
-        bool hasInteracted = false;
+        protected bool hasInteracted = false;
 
         public float interactionRadius = 3f;
         public Transform interactionZone;
 
-        public virtual void Interact()
+        public void Interact(Transform interactingObject)
         {
-            Debug.Log("interacted");
-
-        }
-
-
-        // Update is called once per frame
-        void Update()
-        {
-
-            if (isFocus && !hasInteracted)
+             if (!hasInteracted)
             {
-                float distance = Vector3.Distance(player.position, interactionZone.position);
+                float distance = Vector3.Distance(interactingObject.position, interactionZone.position);
                 if (distance <= interactionRadius)
                 {
-                    Interact();
-                    hasInteracted = true;
+                    CompleteInteract(interactingObject);
                 }
             }
 
         }
 
-        public void OnFocused(Transform playerTransform)
-        {
-            isFocus = true;
-            player = playerTransform;
-            hasInteracted = false;
-        }
+        // Update is called once per frame
+        // void Update()
+        // {
 
-        public void DeFocused()
-        {
-            isFocus = false;
-            player = null;
-            hasInteracted = false;
+        //     if (!hasInteracted)
+        //     {
+        //         float distance = Vector3.Distance(player.position, interactionZone.position);
+        //         if (distance <= interactionRadius)
+        //         {
+        //             Debug.Log("player can interact with", this.transform);
+        //         }
+        //     }
 
+        // }
+
+        protected virtual void CompleteInteract(Transform interactingObject){
+            Debug.Log("interacted");
         }
 
         void OnDrawGizmosSelected()

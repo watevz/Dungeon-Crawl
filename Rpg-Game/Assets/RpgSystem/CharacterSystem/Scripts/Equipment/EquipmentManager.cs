@@ -43,7 +43,7 @@ namespace InventorySystem
 
                 void Start()
                 {
-                    inventory = Inventory.instance;
+                    inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
 
                     int numOfSlots = System.Enum.GetNames(typeof(equipmentSlot)).Length;
                     currentEquipment = new Equipment[numOfSlots];

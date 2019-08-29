@@ -5,12 +5,18 @@ using UnityEngine.UI;
 
 namespace InventorySystem
 {
-    public class InventorySlot : MonoBehaviour
+    public class InventoryUISlot : MonoBehaviour
     {
 
         Item item;
+        Inventory inventory;
         public Image icon;
         public Button removeButton;
+
+        void Start()
+        {
+            inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        }
 
         public void AddItem(Item newItem)
         {
@@ -38,7 +44,7 @@ namespace InventorySystem
 
         public void OnRemoveButton()
         {
-            Inventory.instance.RemoveItem(item);
+            inventory.RemoveItem(item);
         }
     }
 }

@@ -39,7 +39,7 @@ namespace RPGAnimations
 				anim.speed = animSpeedMultiplier;
             }
 		}
-        public void StateCheck(Interactable focus)
+        public void StateCheck(PlayerState focus)
         {
 
         }

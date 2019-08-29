@@ -1,27 +1,35 @@
 ﻿using UnityEngine;
+using InventorySystem;
 
 
 namespace Interaction
 {
     public class ItemPickup : Interactable
     {
-
-        //public Item item;
+        public Item item;
 
         bool wasPickedUp = false;
 
-        public override void Interact()
+        protected override void CompleteInteract(Transform interactingObject)
         {
-            base.Interact();
-
-            PickUp();
+            base.CompleteInteract(interactingObject);
+            Inventory interactingInventory = interactingObject.GetComponent<Inventory>();
+            if (interactingInventory)
+            {
+                PickUp(interactingInventory);
+                hasInteracted = true;
+            }
         }
 
-        void PickUp()
+        void PickUp(Inventory interactingInventory)
         {
-            // wasPickedUp = Inventory.instance.AddItem(item);
-            // if (wasPickedUp)
-            //     Destroy(gameObject);
+            wasPickedUp = interactingInventory.AddItem(item);
+            if (wasPickedUp)
+            {
+                Destroy(gameObject);
+            }
+            Debug.Log("picked up", gameObject);
+
         }
     }
 }

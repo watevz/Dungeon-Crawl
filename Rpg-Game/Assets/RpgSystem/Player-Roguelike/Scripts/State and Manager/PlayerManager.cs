@@ -36,25 +36,18 @@ public class PlayerManager : MonoBehaviour {
         {
             if( playerState.focus != null)
             {
-                playerState.focus.DeFocused();
+                playerState.focus= null;
             }
             
             playerState.focus = targetInteractable;
             
         }
-
-        targetInteractable.OnFocused(transform);
     }
 
-    public void RemoveFocus()
-    {
-        if (playerState.focus != null)
-        {
-            playerState.focus.DeFocused();
-        }
-
-        playerState.focus = null;
+    public void SetMoving(bool moveState){
+        playerState.isMoving = moveState;
     }
+
     public void KillPlayer()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
