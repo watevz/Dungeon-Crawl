@@ -1,5 +1,4 @@
-﻿using InventorySystem.Items;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
@@ -15,6 +14,7 @@ namespace InventorySystem
 
         void Start()
         {
+            // need to refactor so this is passed down by the parent inventory ui
             inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         }
 
@@ -26,7 +26,7 @@ namespace InventorySystem
             removeButton.interactable = true;
         }
 
-        public void RemoveItem()
+        public void ClearSlot()
         {
             item = null;
             icon.sprite = null;

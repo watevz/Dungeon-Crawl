@@ -11,24 +11,16 @@ namespace InventorySystem
         // Use this for initialization
         void Start()
         {
+            //need to refactor so this can take in any inventory not just the players
             inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
             inventory.OnItemChangedCallBack += UpdateUI;
 
             InventoryUISlots = InventoryUISlotsParent.GetComponentsInChildren<InventoryUISlot>();
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (Input.GetButtonDown("Inventory"))
-            {
-                inventoryUi.SetActive(!inventoryUi.activeSelf);
-            }
-        }
-
         void UpdateUI()
         {
-            Debug.Log("updateing ui");
+            Debug.Log("updating ui");
             for (int i = 0; i < InventoryUISlots.Length; i++)
             {
                 if (i < inventory.items.Count)
@@ -37,7 +29,7 @@ namespace InventorySystem
                 }
                 else
                 {
-                    InventoryUISlots[i].RemoveItem();
+                    InventoryUISlots[i].ClearSlot();
                 }
             }
         }
