@@ -33,12 +33,12 @@ namespace InventorySystem
                 public OnEquipmentChanged onEquipmentChanged;
 
 
-                public SkinnedMeshRenderer targetMesh;
+                //public SkinnedMeshRenderer targetMesh;
 
                 public Equipment[] defualtEquipment;
 
-                Equipment[] currentEquipment;
-                SkinnedMeshRenderer[] currentMeshes;
+                public Equipment[] currentEquipment;
+                //SkinnedMeshRenderer[] currentMeshes;
                 Inventory inventory;
 
                 void Start()
@@ -47,7 +47,7 @@ namespace InventorySystem
 
                     int numOfSlots = System.Enum.GetNames(typeof(equipmentSlot)).Length;
                     currentEquipment = new Equipment[numOfSlots];
-                    currentMeshes = new SkinnedMeshRenderer[numOfSlots];
+                    //currentMeshes = new SkinnedMeshRenderer[numOfSlots];
 
                     EquipDefaultItems();
 
@@ -61,13 +61,13 @@ namespace InventorySystem
 
                     currentEquipment[slotIndex] = newItem;
 
-                    SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
-                    newMesh.transform.parent = targetMesh.transform;
+                    //SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
+                    //newMesh.transform.parent = targetMesh.transform;
+                    // make changes so this equips to the right bones eg hand head etc
+                    // newMesh.bones = targetMesh.bones;
+                    // newMesh.rootBone = targetMesh.rootBone;
 
-                    newMesh.bones = targetMesh.bones;
-                    newMesh.rootBone = targetMesh.rootBone;
-
-                    currentMeshes[slotIndex] = newMesh;
+                    // currentMeshes[slotIndex] = newMesh;
 
                     if (onEquipmentChanged != null)
                     {
@@ -88,10 +88,10 @@ namespace InventorySystem
                     if (currentEquipment[slotIndex] != null)
                     {
 
-                        if (currentMeshes[slotIndex] != null)
-                        {
-                            Destroy(currentMeshes[slotIndex].gameObject);
-                        }
+                        // if (currentMeshes[slotIndex] != null)
+                        // {
+                        //     Destroy(currentMeshes[slotIndex].gameObject);
+                        // }
                         Equipment oldItem = currentEquipment[slotIndex];
                         inventory.AddItem(oldItem);
 

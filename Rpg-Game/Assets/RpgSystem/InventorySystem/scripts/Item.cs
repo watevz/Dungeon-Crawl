@@ -13,14 +13,16 @@ namespace InventorySystem
         public Sprite icon = null;
         public bool isDefualtItem = false;
 
+        public Inventory inventoryCurrentlyIn;
+
         public virtual void Use()
         {
             //use the item
         }
 
-        public void RemoveFromInventory(Inventory inventory)
+        public void RemoveFromInventory()
         {
-            inventory.RemoveItem(this);
+            inventoryCurrentlyIn.RemoveItem(this);
         }
     }
 }

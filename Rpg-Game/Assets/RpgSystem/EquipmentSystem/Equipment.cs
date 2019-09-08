@@ -19,12 +19,10 @@ namespace InventorySystem
                 public override void Use()
                 {
                     base.Use();
-                    EquipmentManager.instance.Equip(this);
-                    //RemoveFromInventory();
+                    inventoryCurrentlyIn.GetComponent<EquipmentManager>().Equip(this);
+                    // EquipmentManager.instance.Equip(this);
+                    RemoveFromInventory();
                 }
-
-
-
             }
 
             public enum equipmentSlot { Head, Chest, Legs, Feet, MainHand, OffHand }

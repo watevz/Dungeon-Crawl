@@ -38,6 +38,7 @@ namespace InventorySystem
                 }
 
                 items.Add(item);
+                item.inventoryCurrentlyIn = this;
                 if (OnItemChangedCallBack != null)
                     OnItemChangedCallBack.Invoke();
             }
@@ -47,6 +48,7 @@ namespace InventorySystem
         public void RemoveItem(Item item)
         {
             items.Remove(item);
+            item.inventoryCurrentlyIn = null;
 
             if (OnItemChangedCallBack != null)
                 OnItemChangedCallBack.Invoke();
