@@ -8,18 +8,6 @@ namespace InventorySystem
 {
     public class Inventory : MonoBehaviour
     {
-        // #region singleton
-        // public static Inventory instance;
-
-        // void Awake()
-        // {
-        //     if (instance != null)
-        //         Debug.LogWarning("more than one inventory instance");
-
-        //     instance = this;
-        // }
-
-        // #endregion
 
         public delegate void OnItemChanged();
         public OnItemChanged OnItemChangedCallBack;

@@ -20,3 +20,6 @@ MonoBehaviour:
   damageModifier: 3
   equipSlot: 4
   mesh: {fileID: 0}
+  worldObject: {fileID: 1778427119070980, guid: f2532f10600de29418d706af66b4b7d3,
+    type: 3}
+  equipRotation: {x: 0, y: -110, z: -90, w: 0}

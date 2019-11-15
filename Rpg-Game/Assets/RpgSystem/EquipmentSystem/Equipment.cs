@@ -16,11 +16,14 @@ namespace InventorySystem
                 public int damageModifier = 0;
                 public equipmentSlot equipSlot;
                 public SkinnedMeshRenderer mesh;
+                public GameObject worldObject;
+                public Vector3 equipPosition;
+                public Quaternion equipRotation;
                 public override void Use()
                 {
                     base.Use();
                     inventoryCurrentlyIn.GetComponent<EquipmentManager>().Equip(this);
-                    // EquipmentManager.instance.Equip(this);
+                    EquipmentManager.instance.Equip(this);
                     RemoveFromInventory();
                 }
             }

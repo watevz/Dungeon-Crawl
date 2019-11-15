@@ -33,12 +33,12 @@ namespace InventorySystem
                 public OnEquipmentChanged onEquipmentChanged;
 
 
-                //public SkinnedMeshRenderer targetMesh;
+                public SkinnedMeshRenderer targetMesh;
 
                 public Equipment[] defualtEquipment;
-
                 public Equipment[] currentEquipment;
-                //SkinnedMeshRenderer[] currentMeshes;
+                public GameObject[] currentMeshes;
+                public Transform[] equipSlots;
                 Inventory inventory;
 
                 void Start()
@@ -47,27 +47,28 @@ namespace InventorySystem
 
                     int numOfSlots = System.Enum.GetNames(typeof(equipmentSlot)).Length;
                     currentEquipment = new Equipment[numOfSlots];
-                    //currentMeshes = new SkinnedMeshRenderer[numOfSlots];
-
+                    currentMeshes = new GameObject[numOfSlots];
                     EquipDefaultItems();
 
                 }
 
                 public void Equip(Equipment newItem)
                 {
+                    //update equipment slots with correct data
                     int slotIndex = (int)newItem.equipSlot;
                     Equipment oldItem = UnEquip(slotIndex);
-
-
                     currentEquipment[slotIndex] = newItem;
 
-                    //SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
-                    //newMesh.transform.parent = targetMesh.transform;
-                    // make changes so this equips to the right bones eg hand head etc
-                    // newMesh.bones = targetMesh.bones;
-                    // newMesh.rootBone = targetMesh.rootBone;
+                    //create equipment visuals
+                    //parent visuals to correct equip slot
+                    Transform newItemholder = equipSlots[slotIndex];
+                    Debug.Log(newItemholder);
+                    GameObject equipment = Instantiate(newItem.worldObject, newItemholder.position, newItemholder.rotation);
+                    equipment.transform.parent = newItemholder;
+                    equipment.transform.localPosition = newItem.equipPosition;
+                    equipment.transform.localRotation = newItem.equipRotation;
 
-                    // currentMeshes[slotIndex] = newMesh;
+                    currentMeshes[slotIndex] = equipment;
 
                     if (onEquipmentChanged != null)
                     {
@@ -88,10 +89,10 @@ namespace InventorySystem
                     if (currentEquipment[slotIndex] != null)
                     {
 
-                        // if (currentMeshes[slotIndex] != null)
-                        // {
-                        //     Destroy(currentMeshes[slotIndex].gameObject);
-                        // }
+                        if (currentMeshes[slotIndex] != null)
+                        {
+                            Destroy(currentMeshes[slotIndex].gameObject);
+                        }
                         Equipment oldItem = currentEquipment[slotIndex];
                         inventory.AddItem(oldItem);
 

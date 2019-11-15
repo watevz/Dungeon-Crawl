@@ -15,7 +15,11 @@ MonoBehaviour:
   itemName: sword
   icon: {fileID: 21300000, guid: 5fd50594014b70e48bd6993443d46b32, type: 3}
   isDefualtItem: 0
+  inventoryCurrentlyIn: {fileID: 0}
   armourModifier: 0
   damageModifier: 2
   equipSlot: 4
-  mesh: {fileID: 0}
+  mesh: {fileID: 5439562215554964349, guid: fe491b86ce491fb4da3ca984f1dba98d, type: 3}
+  worldObject: {fileID: 100000, guid: cfb8b4469f173ec4f9d2b3a2d42c38aa, type: 3}
+  equipPosition: {x: 0.001220019, y: 0.001320166, z: -0.0001800272}
+  equipRotation: {x: -4.486, y: 0.9480001, z: 89.73701, w: 0}
