@@ -66,7 +66,7 @@ namespace MapGen
                         bossPortalEntrance.transform.position = bossPortal.transform.position;
                         spawnedBoss = true;
                         EventManager.OnBossPortalSpawned();
-                        NavigationBaker.GenerateNavMesh();
+                        //generate nav mesh
                     }
                 }
             } else {
